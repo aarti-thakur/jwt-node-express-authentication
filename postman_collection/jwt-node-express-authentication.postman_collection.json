@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "2e44697c-d6ed-423e-8ecb-3523ef338bfb",
+		"name": "jwt-node-express-authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6388809"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Deepak",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "DEEPAK@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "hello",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:{{port}}/api/register",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Home",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{access_token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyNWI4Y2RiMmJiM2UwMzQxZDcwZWFjIiwiZW1haWwiOiJhYXJ0aUBnbWFpbC5jb20iLCJpYXQiOjE2OTcwNTU5MjQsImV4cCI6MTY5NzA2MzEyNH0.HPoVY2otLpeED7IrEzrJ5bwUSqOaA5MY0ZRJxB8j63k",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:{{port}}/",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "aarti@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "hello",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:{{port}}/api/login",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "aarti@gmail.com",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "hello",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
